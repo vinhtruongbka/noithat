@@ -8,9 +8,9 @@
 }
 .danhmuc_list h3{
 	text-transform: uppercase;
-	padding-top: 10px;
 	padding-bottom: 6px;
-	font-size: 18px !important;
+	 margin-top: 0px !important;
+	font-size: 17px !important;
 	font-weight: bold !important;
 	color: #575454 !important;
 }
@@ -40,7 +40,7 @@
     font-weight: 500;
 }
 .title-head p{
-	margin-top: 27px;
+	margin-top: 10px;
 	margin-bottom: 10px;
 }
 .title-head_1{

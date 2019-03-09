@@ -9,7 +9,7 @@ function fooBar(){
     }
 function getCategory()
 {
-	$categories  = Category::where('parent',0)->get();
+	$categories  = Category::where('parent',0)->where('type','product')->get();
     return $categories;
 }
    

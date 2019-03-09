@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class DumpDatabase extends Migration
+class CreateRolesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class DumpDatabase extends Migration
      */
     public function up()
     {
-        /**
-         * Import database table 
-         *    
-        */
-        DB::unprepared(File::get(base_path('database/sql/larvel-cms-2.sql')));
+        Schema::create('roles', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('description');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -27,6 +28,6 @@ class DumpDatabase extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('roles');
     }
 }

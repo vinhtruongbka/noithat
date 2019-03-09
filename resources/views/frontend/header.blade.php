@@ -1,4 +1,16 @@
 <header id="header" class="">
+		@if (Session::has('info'))
+		<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="alert alert-info">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<strong>{!! Session::get('info') !!}</strong>
+				</div>
+			</div>
+		</div>
+		</section>
+		@endif
 		<section class="topbar hidden-xs">
 			<div class="container">
 				<div class="row">
@@ -18,12 +30,21 @@
 					</div>
 					<div class="col-md-6">
 						<ul class="topbar_left_2 topbar_right">
+							@if (!Auth()->check())
 							<li>
-								<a href=" https://www.facebook.com" title="" class="topbar_right_1">Đăng nhập</a>
+								<a href="{{ route('User.getIndex') }}" title="" class="topbar_right_1">Đăng nhập</a>
 							</li>
 							<li>
-								<a href=" https://www.facebook.com" title="" class="topbar_right_1">Đăng ký</a>
+								<a href="{{ route('User.getIndex') }}" title="" class="topbar_right_1">Đăng ký</a>
 							</li>
+							@else
+							<li style="text-transform: capitalize;">
+								<a href="{{ route('User.getProfile') }}" title="" class="topbar_right_1">{{Auth::user()->name}}</a>
+							</li>
+							<li>
+								<a href="{{ route('User.logout') }}" title="" class="topbar_right_1">Đăng xuất</a>
+							</li>
+							@endif
 						</ul>
 					</div>
 				</div>
@@ -52,8 +73,8 @@
 					<div class="col-md-3 hidden-xs">
 						<ul class="top-righ giohang" style="margin-left: 20px;margin-top: 10px">
 								<li >
-									<a href="" title=""><img src="public/frontend/images/icon_hovercart.png" alt="" class="img-yeu-thich"></a>
-									<span class="count_item">0</span>
+									<a href="{{ route('Cart.getIndex') }}" title=""><img src="public/frontend/images/icon_hovercart.png" alt="" class="img-yeu-thich"></a>
+									<span class="count_item">{{Cart::count()}}</span>
 								</li>
 								<li><span>Giỏ hàng</span></li>
 							</ul>
@@ -79,7 +100,11 @@
 					<ul class="nav navbar-nav my_nav">
 						@foreach (getCategory() as $categorie)
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">{{$categorie->name}}
+							<a href="{{ route('Fronted.getCategory',$categorie->slug."-".$categorie->id) }}" 
+							@if ($categorie->sub_category->count())
+								class="dropdown-toggle" data-toggle="dropdown"
+							@endif
+								>{{$categorie->name}}
 								@if ($categorie->sub_category->count())
 									<b class="caret"></b>
 								@endif
@@ -87,7 +112,7 @@
 							@if ($categorie->sub_category->count())
 								<ul class="dropdown-menu my-dropdown-menu">
 									@foreach ($categorie->sub_category as $subCategory)
-										<li><a href="#">{{$subCategory->name}}</a></li>
+										<li><a href="{{ route('Fronted.getCategory',$subCategory->slug."-".$subCategory->id) }}">{{$subCategory->name}}</a></li>
 									@endforeach
 							    </ul>
 							@endif

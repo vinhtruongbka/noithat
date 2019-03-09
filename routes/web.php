@@ -31,14 +31,24 @@ require_once 'backend/post.php';
 | Product Routes
 |--------------------------------------------------------------------------
 */
-require_once 'backend/product.php';
+//require_once 'backend/product.php';
 /*
 |--------------------------------------------------------------------------
 | Home Routes FE
 |--------------------------------------------------------------------------
 */
 require_once 'frontend/home.php';
-
+/*
+----
+|User Routes FE
+|--------------------------------------------------------------------------
+*/
+require_once 'user/user.php';
+/*
+|Uuser Routes FE
+|--------------------------------------------------------------------------
+*/
+require_once 'cart/cart.php';
 
 // Route::get('/', function () {
 //     return view('frontend.page.home');

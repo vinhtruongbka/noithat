@@ -165,13 +165,22 @@
 	font-weight: bold
 }
 .sibar-detai-1{
-	margin-top: 30px;
+	border: solid 1px #ccc;
+
 }
-.sibar-detai-1 h3{
-	font-size: 20px;
+.sibar-detai-1 h4{
+	background: #ccc;
+    text-align: center;
+    line-height: 2.5em;
+    margin-top: 0px;
+    color: #A80010;
+    font-size: 11pt;
+    font-weight: bold;
+
 }
+
 .my-caption-detail-1{
-	padding-left: 20px;
+	padding-left: 10px;
 }
 /* Moi */
 .my-modal-header{
