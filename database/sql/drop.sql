@@ -1,7 +1,10 @@
+DROP TABLE IF EXISTS `banners`;
+DROP TABLE IF EXISTS `category`;
 DROP TABLE IF EXISTS `category_relation`;
-DROP TABLE IF EXISTS `product`;
 DROP TABLE IF EXISTS `orders`;
 DROP TABLE IF EXISTS `order_detail`;
-DROP TABLE IF EXISTS `systems`;
-DROP TABLE IF EXISTS `category`;
-DROP TABLE IF EXISTS `banners`;
+DROP TABLE IF EXISTS `product`;
+DROP TABLE IF EXISTS `product_image`;
+DROP TABLE IF EXISTS `roles`;
+DROP TABLE IF EXISTS `role_user`;
+DROP TABLE IF EXISTS `users`;

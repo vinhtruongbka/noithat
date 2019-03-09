@@ -1,32 +1,13 @@
--- phpMyAdmin SQL Dump
--- version 4.8.4
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Mar 09, 2019 at 08:25 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.1
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `noithat`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `banners`
---
+DROP TABLE IF EXISTS `banners`;
+DROP TABLE IF EXISTS `category`;
+DROP TABLE IF EXISTS `category_relation`;
+DROP TABLE IF EXISTS `orders`;
+DROP TABLE IF EXISTS `order_detail`;
+DROP TABLE IF EXISTS `product`;
+DROP TABLE IF EXISTS `product_image`;
+DROP TABLE IF EXISTS `roles`;
+DROP TABLE IF EXISTS `role_user`;
+DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `banners` (
   `id` bigint(20) UNSIGNED NOT NULL,
@@ -115,27 +96,6 @@ INSERT INTO `category_relation` (`id`, `cat_id`, `name`, `slug`, `type`, `object
 (9, 3, 'Giá tủ giày gỗ xoan', 'gia-tu-giay-go-xoan', 'product', NULL, NULL, NULL),
 (10, 4, 'giường ngủ gỗ xoan', 'giuong-ngu-go-xoan', 'product', NULL, NULL, NULL),
 (11, 4, 'giường ngủ gỗ xồi', 'giuong-ngu-go-xoi', 'product', NULL, NULL, NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `migrations`
---
-
-CREATE TABLE `migrations` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `batch` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `migrations`
---
-
-INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(2, '2019_03_04_081503_dump-database', 1),
-(3, '2019_03_06_083534_create_roles_table', 2),
-(4, '2019_03_06_083618_create_role_user_table', 2);
 
 -- --------------------------------------------------------
 
