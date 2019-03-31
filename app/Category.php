@@ -12,7 +12,7 @@ class Category extends Model
         return $this->hasMany('App\Category', 'parent');
     }
     public function product(){
-        return $this->hasMany('App\product', 'cat_id')->limit(5);
+        return $this->hasMany('App\Product', 'cat_id')->limit(5);
     }
 
     protected $fillable = [
