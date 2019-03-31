@@ -5,7 +5,11 @@
 		<div class="row">
 			<ul class="breadcrumb my-breadcrumb-1">
 				<li><a href="#">Trang Chủ</a></li>
-				<li><a href="{{ route('Fronted.getCategory',$category->slug."-".$category->id) }}">{{$category->name}}</a></li>
+				 @if ($category!= null)
+				 	<li><a href="{{ route('Fronted.getCategory',$category->slug."-".$category->id) }}">{{$category->name}}</a></li>
+				 @else
+				 	<li><a href="{{ route('Fronted.getSell') }}">Top sản phẩm bán chạy</a></li>
+				 @endif
 				<li class="active">{{$product->name}}</li>
 			</ul>
 		</div>
@@ -28,10 +32,14 @@
 							</h3>
 							<div>
 								<span>Chất liệu: 
-									<span class="thuonghieu">Gỗ xoan đào</span>
+									<span class="thuonghieu">{{$product->material}}</span>
 								</span>
 								<span>&nbsp;|&nbsp;Tình trạng: 
-									<span class="thuonghieu">Còn hàng</span>
+									@if ($product->status == 1)
+										<span class="thuonghieu">Còn hàng</span>
+									@else
+										<span class="thuonghieu">Hết hàng</span>
+									@endif
 								</span>
 							</div>
 							<div class="star">
@@ -45,9 +53,11 @@
 								<p><span class="gia-detail">
 									{{number_format($product->price_input)}}₫
 								</span>
+								@if ($product->price_ouput != null)
 								<span class="product-price-old">
 									{{number_format($product->price_ouput)}}₫		
 								</span>
+								@endif
 							</p>
 						</div>
 						<div class="mota-detai">
@@ -70,8 +80,8 @@
 							<div class="kich-thuoc-mobile">
 								<p>
 									Hoặc đặt mua:
-									<span>01659984007</span>
-									<span>( Miễn phí cuộc gọi )</span>
+									<span>{{ getinfo()->phone }}</span>
+									<span>( Tư vẫn 24/7 )</span>
 								</p>
 							</div>
 						</div>
@@ -108,11 +118,11 @@
 						@if ( $reProduct->price_ouput > $reProduct->price_input || $reProduct->price_ouput == null)
 							<div class="sale-flash sale text-center">Sale</div>
 						@endif
-						<a href="{{ route('Fronted.getProduct',[$product->slug,$reProduct->slug.'-'.$reProduct->id]) }}" class="">
+						<a href="{{ route('Fronted.getProduct',$reProduct->slug.'-'.$reProduct->id) }}" class="">
 							<img data-src="#" alt="" src="uploads/{{$reProduct->image}}" class="img-responsive">
 						</a>
 						<div class="caption my-caption">
-							<a href="{{ route('Fronted.getProduct',[$product->slug,$reProduct->slug.'-'.$reProduct->id]) }}">
+							<a href="{{ route('Fronted.getProduct',$reProduct->slug.'-'.$reProduct->id) }}">
 								<h5 style="text-transform: capitalize;height: 36px;overflow: hidden;">{{$reProduct->name}}
 								</h5>
 							</a>
@@ -136,12 +146,13 @@
 				</div>
 				@foreach ($interest as $interes)
 					<div style="padding-top: 10px">
-					<div class="img-sibar-detai">
-					<img src="public/frontend/images/sanpham_1.jpg" alt="" class="img-responsive">
+					<a href="{{ route('Fronted.getProduct',$interes->slug.'-'.$interes->id) }}">
+						<div class="img-sibar-detai">
+					<img src="uploads/{{$interes->image}}" alt="" class="img-responsive">
 						</div>
 						<div class="danhmuc_list_1">
 							<div class="my-caption my-caption-detail-1">
-								<h5>Monrow Women Black Heels</h5>
+								<h5>{{$interes->name}}</h5>
 								<div class="star">
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
@@ -150,14 +161,15 @@
 									<i class="fa fa-star"></i>
 								</div>
 								<p><span>
-									1.100.000₫
+									{{number_format($interes->price_input)}} ₫
 								</span>
 								<span class="product-price-old">
-									1.300.000₫			
+									{{number_format($interes->price_ouput)}} ₫			
 								</span>
 							</p>
 						</div>
 					</div>
+					</a>
 				</div>
 				@endforeach
 		</div>

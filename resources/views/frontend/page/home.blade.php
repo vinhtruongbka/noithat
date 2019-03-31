@@ -19,11 +19,11 @@
 						@if ( $hot->price_ouput > $hot->price_input || $hot->price_ouput == null)
 							<div class="sale-flash sale text-center">Sale</div>
 						@endif
-						<a href="{{ route('Fronted.getProduct',['san-pham-ban-chay',$hot->slug.'-'.$hot->id]) }}" class="">
+						<a href="{{ route('Fronted.getProduct',$hot->slug.'-'.$hot->id) }}" class="">
 							<img data-src="#" alt="" src="uploads/{{$hot->image}}" class="img-responsive">
 						</a>
 						<div class="caption my-caption">
-							<a href="{{ route('Fronted.getProduct',['san-pham-ban-chay',$hot->slug.'-'.$hot->id]) }}">
+							<a href="{{ route('Fronted.getProduct',$hot->slug.'-'.$hot->id) }}">
 								<h5 style="text-transform: capitalize;height: 36px;overflow: hidden;">{{$hot->name}}
 								</h5>
 							</a>
@@ -40,18 +40,6 @@
 			@endforeach
 		</div>
 </div>
-</section>
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<img src="public/frontend/images/banner_1.png" alt="" class="img-responsive">
-			</div>
-			<div class="col-md-6">
-				<img src="public/frontend/images/banner_2.png" alt="" class="img-responsive">
-			</div>
-		</div>
-	</div>
 </section>
 @foreach ($products as $product)
 	@if ($product->product->count())
@@ -72,11 +60,11 @@
 						@if ( $produc->price_ouput > $produc->price_input || $produc->price_ouput == null)
 							<div class="sale-flash sale text-center">Sale</div>
 						@endif
-						<a href="{{ route('Fronted.getProduct',[$product->slug,$produc->slug.'-'.$produc->id]) }}" class="">
+						<a href="{{ route('Fronted.getProduct',$produc->slug.'-'.$produc->id) }}" class="">
 							<img data-src="#" alt="" src="uploads/{{$produc->image}}" class="img-responsive">
 						</a>
 						<div class="caption my-caption">
-							<a href="{{ route('Fronted.getProduct',[$product->slug,$produc->slug.'-'.$produc->id]) }}">
+							<a href="{{ route('Fronted.getProduct',$produc->slug.'-'.$produc->id) }}">
 								<h5 style="text-transform: capitalize;height: 36px;overflow: hidden;">{{$produc->name}}
 								</h5>
 							</a>

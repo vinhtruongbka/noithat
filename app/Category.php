@@ -14,4 +14,8 @@ class Category extends Model
     public function product(){
         return $this->hasMany('App\product', 'cat_id')->limit(5);
     }
+
+    protected $fillable = [
+        'name', 'slug','parent','type','status','image','ordering','descriptions'
+    ];
 }

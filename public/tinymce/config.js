@@ -88,12 +88,12 @@ var thumb = $(".thumb");
 var remove = $(".remove-thumb");
 
 var mo_img = base_url()+'/public/images/no-ig.png';
-if (typeof old_img != 'undefined')
-{
-	mo_img = old_img !='' ? old_img : mo_img;
-    $('input.img-link').val(mo_img);
-    $('img.img-thumb').attr('src',mo_img);
-}
+// if (typeof old_img != 'undefined')
+// {
+// 	mo_img = old_img !='' ? old_img : mo_img;
+//     $('input.img-link').val(mo_img);
+//     $('img.img-thumb').attr('src',mo_img);
+// }
 
 thumb.on("click", function (e) {
     e.preventDefault();
@@ -116,6 +116,7 @@ thumb.on("click", function (e) {
     	// $('#modal-file .modal-body').html('');
     });
 });	
+
 
 
 remove.on("click", function (e) {

@@ -12,6 +12,9 @@
 .mobile::before { 
     content: "Hotline: ";
 }
+.facebook::before { 
+    content: "Facebook: ";
+}
 .mobile{
 	color: #575454;
     background: transparent;
@@ -312,4 +315,55 @@ ul{
 	background: #363636 !important;
 	border: 0px !important;
 	color: #fff !important;
+}
+
+.list-menu {
+    line-height: 35px;
+}
+
+.list-menu .li_menu.li_menu_xxx {
+    position: relative;
+}
+
+.list-menu .li_menu.li_menu_xxx .timexx {
+    display: block;
+    float: left;
+    width: 100%;
+    font-family: 'Roboto',sans-serif;
+}
+
+.list-menu .li_menu.li_menu_xxx a {
+    font-family: "Oswald","HelveticaNeue","Helvetica Neue",sans-serif;
+    font-size: 24px;
+}
+
+.list-menu .li_menu .yeloww {
+    color: #fdbb0a;
+}
+
+.list-menu .li_menu {
+    margin-bottom: 0px;
+    color: #a8a8a9;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.list-menu .li_menu .day_open {
+    display: block;
+    float: left;
+    width: 100%;
+    font-family: 'Roboto',sans-serif;
+}
+
+.list-menu .li_menu .hour_ {
+    font-family: 'Roboto',sans-serif;
+}
+.tt-menu{
+	width: 100% !important;
+}
+.twitter-typeahead{
+	width: 100% !important;
+}
+.list-group{
+	margin-bottom: 0px !important;
 }

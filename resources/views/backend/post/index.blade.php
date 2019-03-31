@@ -5,7 +5,7 @@
 <section class="content">
     <!-- Default box -->
     <div class="box">
-      <form action="http://localhost/sv-shop/backend/post-delete-all" method="POST" class="ng-pristine ng-valid">
+      <form action="{{ route('backend.category-delete-all') }}" method="POST" class="ng-pristine ng-valid">
       <div class="box-header with-border">
         <div class="panel panel-default">
           <div class="panel-body">

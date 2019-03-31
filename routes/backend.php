@@ -1,7 +1,8 @@
 <?php 
 //Home
-	Route::get('backend', function () {
-    	return view('backend.home.index');
-	});
+	Route::get('/backend',[
+		'uses' => 'backend\ProductController@home',
+		'as' => 'backend.home.index'
+	]);
 
  ?>

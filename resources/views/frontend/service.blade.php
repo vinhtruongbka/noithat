@@ -23,7 +23,7 @@
 							<div class="service">
 								<ul class="service_item_ed">
 									<li class="service-title">Đặt hàng online cực nhanh</li>
-									<li>Gọi ngay: 0359984007
+									<li>Gọi ngay: {{ getinfo()->phone }}
 									</li>
 								</ul>
 							</div>

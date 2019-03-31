@@ -44,4 +44,14 @@
 			"uses"=>"user\UserController@postForgetPassword",
 			'as'=>'User.postForgetPassword'
 		]);
+
+	Route::get('auth/get-password/{token?}',[
+		'uses' => 'user\UserController@getPasswordToken',
+		'as' => 'User.getPasswordToken'
+	]);
+
+	Route::post('auth/post-password',[
+	'uses' => 'user\UserController@postPasswordToken',
+	'as' => 'User.postPasswordToken'
+]);
  ?>

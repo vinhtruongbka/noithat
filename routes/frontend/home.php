@@ -14,7 +14,7 @@
 			'as'=>'Fronted.getSell'
 		]);
 
-	Route::get('danh-muc/{cat}/{slug}',[
+	Route::get('san-pham/{slug}',[
 			"uses"=>"frontend\HomeController@getProduct",
 			'as'=>'Fronted.getProduct'
 		]);

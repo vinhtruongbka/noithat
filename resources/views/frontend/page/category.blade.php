@@ -59,19 +59,11 @@
 						@if ( $produc->price_ouput > $produc->price_input || $produc->price_ouput == null)
 							<div class="sale-flash sale text-center">Sale</div>
 						@endif
-						<a href="@if (isset($category->slug))
-							{{ route('Fronted.getProduct',[$category->slug,$produc->slug.'-'.$produc->id]) }}
-						@else
-							{{ route('Fronted.getProduct',['san-pham-ban-chay',$produc->slug.'-'.$produc->id]) }}
-						@endif" class="">
+						<a href="{{ route('Fronted.getProduct',$produc->slug.'-'.$produc->id) }}" class="">
 							<img data-src="#" alt="" src="uploads/{{$produc->image}}" class="img-responsive">
 						</a>
 						<div class="caption my-caption">
-							<a href="@if (isset($category->slug))
-							{{ route('Fronted.getProduct',[$category->slug,$produc->slug.'-'.$produc->id]) }}
-						@else
-							{{ route('Fronted.getProduct',['san-pham-ban-chay',$produc->slug.'-'.$produc->id]) }}
-						@endif">
+							<a href="{{ route('Fronted.getProduct',$produc->slug.'-'.$produc->id) }}">
 								<h5 style="text-transform: capitalize;height: 36px;overflow: hidden;">{{$produc->name}}
 								</h5>
 							</a>

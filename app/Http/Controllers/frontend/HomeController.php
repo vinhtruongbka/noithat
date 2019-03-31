@@ -14,7 +14,7 @@ class HomeController extends Controller
 {
     public function getIndex()
     {
-    	$slides = Banners::all();
+    	$slides = Banners::where('status','<>','3')->get();
     	$hots = DB::table('product')
                      ->where('status', 0)
                      ->limit(4)
@@ -59,7 +59,7 @@ class HomeController extends Controller
     	return view('frontend.page.category',compact('products','catAll'));
     }
 
-    public function getProduct($cat,$slug)
+    public function getProduct($slug)
     {
     	$id = last(explode('-',$slug));
 
@@ -70,6 +70,12 @@ class HomeController extends Controller
     	$reProducts =Product::where('cat_id',$product->cat_id)->inRandomOrder()->limit(3)->get();
 
     	$interest = Product::inRandomOrder()->limit(3)->get();
+
+        $interest = DB::table('product')
+            ->join('category', 'category.id', '=', 'product.cat_id')
+            ->select('product.*', 'category.slug as catSlug')
+            ->inRandomOrder()->limit(3)
+            ->get();
     	return view('frontend.page.detail',compact('product','category','reProducts','interest'));
     }
 

@@ -6,10 +6,10 @@
       <div class="pull-left image">
 
 
-        <img src="uploads/images/truong.jpg" class="img-circle" alt="User Image" style="width: 35px">
+        <img src="uploads/{{Auth::user()->images}}" class="img-circle" alt="User Image" style="width: 35px">
       </div>
       <div class="pull-left info">
-        <p>le vinh truong</p>
+        <p>{{Auth::user()->name}}</p>
         <a href="backend/user-profile"><i class="fa fa-circle text-success"></i> Thông tin</a>
       </div>
     </div>
@@ -23,27 +23,7 @@
         <!-- Kiểm tra và duyệt menu leval 2 -->
       </li>
       <!-- endif canDo -->
-      <li class="treeview">
-        <a href="">
-          <i class="fa fa-file-word-o"></i><span>Quản lý bài viết</span><span class="pull-right-container"><i class="fa fa-angle-left pull-right"></i></span>
-        </a>
-        <!-- Kiểm tra và duyệt menu leval 2 -->
-        <ul class="treeview-menu">
-          <li class=""><a href=" backend/post "><i class="fa fa-check"></i> <span>Danh sách bài viết</span></a>
-            <!-- Kiểm tra và duyệt menu leval 3 -->
-          </li>
-          <!-- endif itemcanDo -->
-          <li class=""><a href=" backend/post-add "><i class="fa fa-check"></i> <span>Thêm mới bài viết</span></a>
-            <!-- Kiểm tra và duyệt menu leval 3 -->
-          </li>
-          <!-- endif itemcanDo -->
-          <li class=""><a href=" backend/category "><i class="fa fa-check"></i> <span>Quản lý danh mục</span></a>
-            <!-- Kiểm tra và duyệt menu leval 3 -->
-          </li>
-          <!-- endif itemcanDo -->
-          <!-- endforeach items -->
-        </ul>
-      </li>
+      
       <!-- endif canDo -->
       <!-- endif canDo -->
       <!-- endif canDo -->
@@ -53,7 +33,7 @@
         </a>
         <!-- Kiểm tra và duyệt menu leval 2 -->
         <ul class="treeview-menu">
-          <li class=""><a href=" backend/product "><i class="fa fa-external-link-square"></i> <span>Danh sách sản phẩm</span></a>
+          <li class=""><a href="{{ route('backend.getProduct') }}"><i class="fa fa-external-link-square"></i> <span>Danh sách sản phẩm</span></a>
             <!-- Kiểm tra và duyệt menu leval 3 -->
           </li>
           <!-- endif itemcanDo -->
@@ -61,7 +41,7 @@
             <!-- Kiểm tra và duyệt menu leval 3 -->
           </li>
           <!-- endif itemcanDo -->
-          <li class=""><a href=" backend/product-order "><i class="fa fa-external-link-square"></i> <span>Đơn hàng</span></a>
+          <li class=""><a href=" {{ route('backend.order') }} "><i class="fa fa-external-link-square"></i> <span>Đơn hàng</span></a>
             <!-- Kiểm tra và duyệt menu leval 3 -->
           </li>
           <!-- endif itemcanDo -->
@@ -70,10 +50,15 @@
       </li>
       {{-- end produc --}}
       <li class=" treeview">
-        <a href=" backend ">
+        <a href="">
           <i class="fa fa-folder-open"></i> <span>Quản lý files</span>
         </a>
         <!-- Kiểm tra và duyệt menu leval 2 -->
+        <ul class="treeview-menu">
+          <li class=""><a href="{{ route('backend.media') }}"><i class="fa fa-external-link-square"></i> <span>Ảnh</span></a>
+            <!-- Kiểm tra và duyệt menu leval 3 -->
+          </li>
+        </ul>
       </li>
       {{-- end media --}}
       <li class="treeview">
@@ -82,23 +67,12 @@
         </a>
         <!-- Kiểm tra và duyệt menu leval 2 -->
         <ul class="treeview-menu">
-          <li class=""><a href=" backend/user "><i class="fa fa-check"></i> <span>Danh sách tài khoản</span></a>
-            <!-- Kiểm tra và duyệt menu leval 3 -->
-          </li>
           <!-- endif itemcanDo -->
-          <li class=""><a href=" backend/user-profile "><i class="fa fa-check"></i> <span>Thông tin cá nhân</span></a>
+          <li class=""><a href="{{ route('backend.user-profile') }}"><i class="fa fa-check"></i> <span>Thông tin cá nhân</span></a>
             <!-- Kiểm tra và duyệt menu leval 3 -->
           </li>
           <!-- endif itemcanDo -->
           <li class=""><a href=" backend/user-change-password "><i class="fa fa-check"></i> <span>Thay đổi mật khảu</span></a>
-            <!-- Kiểm tra và duyệt menu leval 3 -->
-          </li>
-          <!-- endif itemcanDo -->
-          <li class=""><a href=" backend/role "><i class="fa fa-check"></i> <span>Danh sách nhóm</span></a>
-            <!-- Kiểm tra và duyệt menu leval 3 -->
-          </li>
-          <!-- endif itemcanDo -->
-          <li class=""><a href=" backend/permission "><i class="fa fa-check"></i> <span>Danh sách quyền</span></a>
             <!-- Kiểm tra và duyệt menu leval 3 -->
           </li>
           <!-- endif itemcanDo -->
@@ -114,7 +88,8 @@
         </a>
         <!-- Kiểm tra và duyệt menu leval 2 -->
         <ul class="treeview-menu">
-          <li class=""><a href=" backend/user "><i class="fa fa-external-link-square"></i> <span>Menus</span></a>
+          <li class=""><a href="{{ route('backend.banner') }}"><i class="fa fa-external-link-square"></i> <span>Banner</span></a>
+            <li class=""><a href="{{ route('backend.logo') }}"><i class="fa fa-external-link-square"></i> <span>Logo</span></a>
             <!-- Kiểm tra và duyệt menu leval 3 -->
           </li>
         </ul>

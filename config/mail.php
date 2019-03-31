@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'vinhtruongbka@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'name' => env('MAIL_FROM_NAME', 'Lấy lại mật khẩu'),
     ],
 
     /*
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('vinhtruongbka@gmail.com'),
+    'username' => 'vinhtruongbka@gmail.com',
 
-    'password' => env('Xalo244a94929492'),
+    'password' => 'Xalo244a94929492',
 
     /*
     |--------------------------------------------------------------------------

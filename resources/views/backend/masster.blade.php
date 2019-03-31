@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Admin - Bảng điều khiển</title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="shortcut icon" type="image/x-icon" href="public/images/logo.png" />
+ {{--  <link rel="shortcut icon" type="image/x-icon" href="public/images/logo.png" /> --}}
   <meta name="_token" content="EpofSi8VYPUMKbvW64FjogkhtjogGZ0xqe9gYtkl" />
   <link rel="stylesheet" href="public/css/bootstrap.min.css">
   <link rel="stylesheet" href="public/css/font-awesome.min.css">
@@ -29,6 +29,7 @@
 @include('backend.header')
 @include('backend.sidebar')
 <div class="content-wrapper">
+  @include('alert.alert')
 <section class="content-header">
     <h1>
       @if(trim($__env->yieldContent('title-icon')))

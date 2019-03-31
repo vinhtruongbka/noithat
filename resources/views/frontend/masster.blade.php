@@ -11,21 +11,27 @@
 	<link rel="stylesheet" href="public/frontend/css/list.css">
 	<link rel="stylesheet" href="public/frontend/css/detail.css">
 	<link rel="stylesheet" href="public/frontend/css/cart.css">
-
+	<script type="text/javascript">
+    function base_url(){
+      return "<?php echo url('/');?>";
+    }
+  </script>		
 </head>
 <body>
+
 	@include('frontend.header')
 	<main>
 		@yield('contentFront')
-		}
 	</main>
 	<footer>
 		@include('frontend.footer')	
 	</footer>
 </body>
-<script src="public/frontend/js/jquery-3.2.1.min.js"></script>
+<script src="public/frontend/js/jquery-3.3.1.min.js"></script>
 <script src="public/frontend/bootstrap/js/bootstrap.min.js"></script>
 <script src="public/frontend/elevatezoom-master/jquery.elevatezoom.js"></script>
+<script src="public/typeahead/typeahead.bundle.js"></script>
+<script src="public/frontend/js/function.js"></script>
 <script type="text/javascript">
 		
 		$("#zoom_01").elevateZoom();

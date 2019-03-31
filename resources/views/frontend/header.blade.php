@@ -3,7 +3,7 @@
 		<section>
 		<div class="container-fluid">
 			<div class="row">
-				<div class="alert alert-info">
+				<div class="alert alert-info text-center">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					<strong>{!! Session::get('info') !!}</strong>
 				</div>
@@ -18,13 +18,13 @@
 						<ul class="topbar_left_1">
 							<li>
 								<i class="fa fa-mobile" aria-hidden="true" style="font-size: 15px;"></i>
-								<a href="" title="" class="mobile">016599840007</a>
+								<a href="" title="" class="mobile">{{ getinfo()->phone }}</a>
 							</li>
 						</ul>
 						<ul class="topbar_left_2">
 							<li>
 								<i class="fa fa-facebook-square" aria-hidden="true"></i>
-								<a href=" https://www.facebook.com" title="" class="mobile">https://www.facebook.com</a>
+								<a href="{{ getinfo()->facebook }}" title="" class="facebook">https://www.facebook.com</a>
 							</li>
 						</ul>
 					</div>
@@ -55,19 +55,19 @@
 				<div class="row mid-header_1">
 					<div class="col-md-3">
 						<a href="" title="">
-							<img src="public/frontend/images/logo.png" alt="" class="img-responsive">
+							<img src="uploads/{{ getlogo() }}" alt="" class="img-responsive">
 						</a>
 					</div>
 					<div class="col-md-6">
 						<div style="margin-top: 10px">
-							<form action="" method="" class="input-group search-bar" role="search">
-								<input type="text" name="query" value="" autocomplete="off" placeholder="Bạn đang tìm sản phẩm nào" class="input-group-flie">
-								<span class="">
-									<button type="submit" class="btn icon-fallback-text my-seach">
-										<span class="fa fa-search my-fa-search"></span>      
-									</button>   
-								</span>
-							</form>
+							<form action="{{ route('Search.viewProduct') }}" method="GET" class="input-group search-bar" role="search">
+							<input type="text" name="q"  placeholder="Bạn cần tìm gì hôm nay" class="input-group-flie search-input">
+							<span class="">
+								<button type="submit" class="btn icon-fallback-text my-seach">
+									<span class="fa fa-search my-fa-search"></span>      
+								</button>   
+							</span>
+						</form>
 						</div>
 					</div>
 					<div class="col-md-3 hidden-xs">

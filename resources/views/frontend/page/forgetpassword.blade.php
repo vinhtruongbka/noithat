@@ -5,7 +5,7 @@
 		<div class="row">
 			<ul class="breadcrumb my-breadcrumb-1">
 				<li><a href="#">Trang Chủ</a></li>
-				<li class="active">Thông tin cá nhân</li>
+				<li class="active">Lấy lại mật khẩu</li>
 			</ul>
 		</div>
 	</div>
@@ -29,6 +29,11 @@
                           <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>
                           <input id="email" name="email" placeholder="Nhập email của bạn" class="form-control"  type="email">
                         </div>
+                        @if ($errors->has('email'))
+                          <div class="help-block" style="color: red">
+                            {!!$errors->first('email')!!}
+                          </div>
+                          @endif
                       </div>
                       <div class="form-group">
                         <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Lấy lại mật khẩu" type="submit">

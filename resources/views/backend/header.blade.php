@@ -18,8 +18,8 @@
         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="uploads/images/truong.jpg" class="user-image" alt="User Image">
-            <span class="hidden-xs">le vinh truong</span>
+            <img src="uploads/{{Auth::user()->images}}" class="user-image" alt="User Image">
+            <span class="hidden-xs">{{Auth::user()->name}}</span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
@@ -27,8 +27,7 @@
               <img src="https://www.gravatar.com/avatar/b1c162ef2139b7e7c2d2e9b00e4de088?size=50" class="img-circle" alt="User Image" />
 
               <p>
-                le vinh truong - Web Developer
-                <small>Member since Nov. 2012</small>
+                {{Auth::user()->name}}
               </p>
             </li>
             <!-- Menu Body -->
@@ -39,7 +38,7 @@
                 <div class="btn-group">
                   <a href="backend/user-profile" class="btn btn-xs btn-info">Hồ sơ</a>
                   <a href="backend/user-change-password" class="btn btn-xs btn-primary">Đổi mật khẩu</a>
-                  <a href="backend/logout" onclick="return confirm('Bạn có chắc chắn thoát ?')" class="btn btn-xs btn-danger">Thoát</a>
+                  <a href="{{ route('User.logout') }}" onclick="return confirm('Bạn có chắc chắn thoát ?')" class="btn btn-xs btn-danger">Thoát</a>
                 </div>
               </div>
             </li>
