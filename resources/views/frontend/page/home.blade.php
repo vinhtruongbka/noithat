@@ -14,10 +14,10 @@
 				<div class="col-md-3">
 					<div class="thumbnail my-thumbnail">
 						@if ( $hot->hot == 1)
-							<div class="sale-flash new text-center">Hot</div>
+							<div class="sale-flash new text-center hidden-xs">Hot</div>
 						@endif
 						@if ( $hot->price_ouput > $hot->price_input || $hot->price_ouput == null)
-							<div class="sale-flash sale text-center">Sale</div>
+							<div class="sale-flash sale text-center hidden-xs">Sale</div>
 						@endif
 						<a href="{{ route('Fronted.getProduct',$hot->slug.'-'.$hot->id) }}" class="">
 							<img data-src="#" alt="" src="uploads/{{$hot->image}}" class="img-responsive">
@@ -55,10 +55,10 @@
 				<div class="col-md-15">
 					<div class="thumbnail my-thumbnail">
 						@if ( $produc->hot == 1)
-							<div class="sale-flash new text-center">Hot</div>
+							<div class="sale-flash new text-center hidden-xs">Hot</div>
 						@endif
 						@if ( $produc->price_ouput > $produc->price_input || $produc->price_ouput == null)
-							<div class="sale-flash sale text-center">Sale</div>
+							<div class="sale-flash sale text-center hidden-xs">Sale</div>
 						@endif
 						<a href="{{ route('Fronted.getProduct',$produc->slug.'-'.$produc->id) }}" class="">
 							<img data-src="#" alt="" src="uploads/{{$produc->image}}" class="img-responsive">

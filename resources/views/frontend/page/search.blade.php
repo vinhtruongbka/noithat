@@ -28,10 +28,10 @@
 		<a href="{{ route('Fronted.getProduct',$product->slug.'-'.$product->id) }}">
 			<div class="thumbnail my-thumbnail">
 				@if ( $product->hot == 1)
-					<div class="sale-flash new text-center">Hot</div>
+					<div class="sale-flash new text-center hidden-xs">Hot</div>
 				@endif
 				@if ( $product->price_ouput > $product->price_input || $product->price_ouput == null)
-					<div class="sale-flash sale text-center">Sale</div>
+					<div class="sale-flash sale text-center hidden-xs">Sale</div>
 				@endif
 				<img data-src="#" alt="" src="uploads/{{$product->image}}" class="img-responsive">
 				<div class="caption my-caption">

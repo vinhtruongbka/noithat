@@ -113,10 +113,10 @@
 				<div class="col-md-4">
 					<div class="thumbnail my-thumbnail">
 						@if ( $reProduct->hot == 1)
-							<div class="sale-flash new text-center">Hot</div>
+							<div class="sale-flash new text-center hidden-xs">Hot</div>
 						@endif
 						@if ( $reProduct->price_ouput > $reProduct->price_input || $reProduct->price_ouput == null)
-							<div class="sale-flash sale text-center">Sale</div>
+							<div class="sale-flash sale text-center hidden-xs">Sale</div>
 						@endif
 						<a href="{{ route('Fronted.getProduct',$reProduct->slug.'-'.$reProduct->id) }}" class="">
 							<img data-src="#" alt="" src="uploads/{{$reProduct->image}}" class="img-responsive">
