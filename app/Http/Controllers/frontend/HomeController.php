@@ -19,6 +19,7 @@ class HomeController extends Controller
                      ->where('hot', '1')
                      ->limit(4)
                      ->get();
+        dd($hots);
         $products = Category::where('parent',0)
         			->where('type','product')
         			->get();
