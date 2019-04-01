@@ -77,10 +77,12 @@
 						</td>
 						<td class="text-center">
 							<p class="muahang_tex">
-								@if ($orderDetail->status == 1)
-									Chưa giao hàng
+								@if ($orderDetail->status == 0)
+									Chưa duyệt
+								@elseif($orderDetail->status == 1)
+									Đã duyệt,đang giao hàng
 								@else
-									Đã giao hàng
+								Đã giao hàng
 								@endif
 							</p>
 						</td>
