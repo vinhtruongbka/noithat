@@ -86,7 +86,7 @@
                           </tr>
                           <tr>
                               <th>Địa chỉ</th>
-                              <td>{{$model->user->address}}</td>
+                              <td>{{$model->address}}</td>
                           </tr>
                     </table>
                   </div>
