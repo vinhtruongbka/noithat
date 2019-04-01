@@ -25,7 +25,7 @@
 			<div class="col-md-3">
 				<h5>DANH MỤC CHÍNH</h5>
 				<ul class="nav nav-divider my-nav-tabs">
-					@foreach (getCategory() as $cats)
+					@foreach (getCategoryFot() as $cats)
 						<li><a href="">{{$cats->name}}</a></li>
 					@endforeach
 				</ul>

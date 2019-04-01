@@ -48,7 +48,7 @@ class HomeController extends Controller
 
      public function getSell()
     {
-    	$products= Product::where('status',0)
+    	$products= Product::where('hot','1')
     			->paginate(20);
 
     	$catAll = DB::table('category')
