@@ -367,3 +367,6 @@ ul{
 .list-group{
 	margin-bottom: 0px !important;
 }
+.my-thumbnail a img{
+	max-height: 191px;
+}
