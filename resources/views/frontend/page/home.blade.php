@@ -13,7 +13,7 @@
 			@foreach ($hots as $hot)
 				<div class="col-md-3">
 					<div class="thumbnail my-thumbnail">
-						@if ( $hot->status == 0)
+						@if ( $hot->hot == 1)
 							<div class="sale-flash new text-center">Hot</div>
 						@endif
 						@if ( $hot->price_ouput > $hot->price_input || $hot->price_ouput == null)
@@ -54,7 +54,7 @@
 			@foreach ($product->product as $produc)
 				<div class="col-md-15">
 					<div class="thumbnail my-thumbnail">
-						@if ( $produc->status == 0)
+						@if ( $produc->hot == 1)
 							<div class="sale-flash new text-center">Hot</div>
 						@endif
 						@if ( $produc->price_ouput > $produc->price_input || $produc->price_ouput == null)

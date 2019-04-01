@@ -53,7 +53,7 @@
 					@foreach ($products as $produc)
 				<div class="col-md-4">
 					<div class="thumbnail my-thumbnail">
-						@if ( $produc->status == 0)
+						@if ( $produc->hot == 1)
 							<div class="sale-flash new text-center">Hot</div>
 						@endif
 						@if ( $produc->price_ouput > $produc->price_input || $produc->price_ouput == null)

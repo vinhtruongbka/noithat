@@ -29,7 +29,7 @@
 				<div class="col-md-3">
 					<a href="{{ route('Fronted.getProduct',[$product->catSlug,$product->slug.'-'.$product->id]) }}">
 						<div class="thumbnail my-thumbnail">
-						@if ( $product->status == 0)
+						@if ( $product->hot == 1)
 							<div class="sale-flash new text-center">Hot</div>
 						@endif
 						@if ( $product->price_ouput > $product->price_input || $product->price_ouput == null)
