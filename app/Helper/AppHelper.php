@@ -11,13 +11,13 @@ function fooBar(){
     }
 function getCategory()
 {
-	$categories  = Category::where('parent',0)->where('type','product')->get();
+	$categories  = Category::where('parent',0)->where('type','product')->limit(4)->get();
     return $categories;
 }
 
 function getCatte()
 {
-	$categories  = Category::where('parent','<>',0)->where('type','product')->get();
+	$categories  = Category::where('parent','<>',0)->where('type','product')->limit(4)->get();
     return $categories;
 }
 
