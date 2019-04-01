@@ -16,7 +16,14 @@ class UserController extends Controller
     */
    public function __construct()
    {
-       $this->middleware('auth');
+       $this->middleware(function ($request, $next) {
+        $this->user= Auth::user();
+        if ($this->user->type != 'admin' || $this->user != null) {
+            Auth::logout();
+            return redirect()->route('login')->with('error','Bạn cần đăng nhập tài khoản admin ! ');
+            }
+        return $next($request);
+        });
    }
     public function profile()
 	{

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Banners;
+use Auth;
 
 class MediaController extends Controller
 {
@@ -15,7 +16,14 @@ class MediaController extends Controller
     */
    public function __construct()
    {
-       $this->middleware('auth');
+       $this->middleware(function ($request, $next) {
+        $this->user= Auth::user();
+        if ($this->user->type != 'admin' || $this->user != null) {
+            Auth::logout();
+            return redirect()->route('login')->with('error','Bạn cần đăng nhập tài khoản admin ! ');
+            }
+        return $next($request);
+        });
    }
     public function index()
 	{

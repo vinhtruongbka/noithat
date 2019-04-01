@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Orders;
 use App\Order_detail;
+use Auth;
 
 
 class OrderController extends Controller
@@ -17,7 +18,14 @@ class OrderController extends Controller
     */
    public function __construct()
    {
-       $this->middleware('auth');
+       $this->middleware(function ($request, $next) {
+        $this->user= Auth::user();
+        if ($this->user->type != 'admin' || $this->user != null) {
+            Auth::logout();
+            return redirect()->route('login')->with('error','Bạn cần đăng nhập tài khoản admin ! ');
+            }
+        return $next($request);
+        });
    }
     public function index(Request $req)
 	{
