@@ -20,7 +20,7 @@ class OrderController extends Controller
    {
        $this->middleware(function ($request, $next) {
         $this->user= Auth::user();
-        if ($this->user->type != 'admin' || $this->user != null) {
+        if ($this->user == null || $this->user->type != 'admin') {
             Auth::logout();
             return redirect()->route('login')->with('error','Bạn cần đăng nhập tài khoản admin ! ');
             }
