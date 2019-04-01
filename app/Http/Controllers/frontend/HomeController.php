@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
     	$slides = Banners::where('status','<>','3')->get();
     	$hots = DB::table('product')
-                     ->where('status', 0)
+                     ->where('hot', 0)
                      ->limit(4)
                      ->get();
         $products = Category::where('parent',0)

@@ -44,7 +44,7 @@
                 </div>
                 <div class="form-group">
                   <label class="control-label">Mô tả ngắn</label>
-                  <textarea name="desc" class="form-control" rows="3"></textarea>
+                  <textarea name="desc" class="form-control" rows="3">{{{{$model->desc}} }}</textarea>
                   @if($errors->has('desc'))
                   <div class="help-block">{{ $errors->first('desc') }}</div>
                   @endif
