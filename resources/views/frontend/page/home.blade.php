@@ -20,7 +20,10 @@
 							<div class="sale-flash sale text-center hidden-xs">Sale</div>
 						@endif
 						<a href="{{ route('Fronted.getProduct',$hot->slug.'-'.$hot->id) }}" class="">
-							<img data-src="#" alt="" src="uploads/{{$hot->image}}" class="img-responsive">
+							<img data-src="#" alt="" src="uploads/{{$hot->image}}" class="img-responsive image">
+							<div class="middle">
+							    <button type="button" class="btn btn-danger img-btn">Xem chi tiết</button>
+							 </div>
 						</a>
 						<div class="caption my-caption">
 							<a href="{{ route('Fronted.getProduct',$hot->slug.'-'.$hot->id) }}">
@@ -61,7 +64,10 @@
 							<div class="sale-flash sale text-center hidden-xs">Sale</div>
 						@endif
 						<a href="{{ route('Fronted.getProduct',$produc->slug.'-'.$produc->id) }}" class="">
-							<img data-src="#" alt="" src="uploads/{{$produc->image}}" class="img-responsive">
+							<img data-src="#" alt="" src="uploads/{{$produc->image}}" class="img-responsive image">
+							<div class="middle">
+							    <button type="button" class="btn btn-danger img-btn">Xem chi tiết</button>
+							 </div>
 						</a>
 						<div class="caption my-caption">
 							<a href="{{ route('Fronted.getProduct',$produc->slug.'-'.$produc->id) }}">
