@@ -139,7 +139,7 @@
 			@endforeach	
 		</div>
 		</div>
-		<div class="col-md-3">
+		<div class="col-md-3  hidden-xs">
 			<div>
 				<div class="danhmuc_list">
 					<h3 >Có thể bạn quan tâm</h3>

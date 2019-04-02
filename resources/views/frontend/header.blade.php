@@ -61,7 +61,7 @@
 					<div class="col-md-6">
 						<div style="margin-top: 10px">
 							<form action="{{ route('Search.viewProduct') }}" method="GET" class="input-group search-bar" role="search">
-							<input type="text" name="q"  placeholder="Bạn cần tìm gì hôm nay" class="input-group-flie search-input">
+							<input type="text" name="query"  placeholder="Bạn cần tìm gì hôm nay" class="input-group-flie search-input">
 							<span class="">
 								<button type="submit" class="btn icon-fallback-text my-seach">
 									<span class="fa fa-search my-fa-search"></span>      

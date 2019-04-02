@@ -1,4 +1,4 @@
-<section class="service-1">
+<section class="service-1 hidden-xs">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-4 service-2">

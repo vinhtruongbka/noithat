@@ -43,7 +43,12 @@ class HomeController extends Controller
 		->select('category.*', DB::raw("count(product.id) as count"))
 		->groupBy('category.name')
 		->get();
-    	return view('frontend.page.category',compact('products','category','catAll'));
+        $interest = DB::table('product')
+            ->join('category', 'category.id', '=', 'product.cat_id')
+            ->select('product.*', 'category.slug as catSlug')
+            ->inRandomOrder()->limit(2)
+            ->get();
+    	return view('frontend.page.category',compact('products','category','catAll','interest'));
     }
 
      public function getSell()

@@ -33,6 +33,39 @@
 						</ul>
 					</div>
 				</div>
+				<div>
+				<div class="danhmuc_list hidden-xs">
+					<h3 >Có thể bạn quan tâm</h3>
+				</div>
+				@foreach ($interest as $interes)
+					<div style="padding-top: 10px">
+					<a href="{{ route('Fronted.getProduct',$interes->slug.'-'.$interes->id) }}">
+						<div class="img-sibar-detai">
+					<img src="uploads/{{$interes->image}}" alt="" class="img-responsive">
+						</div>
+						<div class="danhmuc_list_1">
+							<div class="my-caption my-caption-detail-1">
+								<h5>{{$interes->name}}</h5>
+								<div class="star">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</div>
+								<p><span>
+									{{number_format($interes->price_input)}} ₫
+								</span>
+								<span class="product-price-old">
+									{{number_format($interes->price_ouput)}} ₫			
+								</span>
+							</p>
+						</div>
+					</div>
+					</a>
+				</div>
+				@endforeach
+		</div>
 			</div>
 			<div class="col-md-9">
 				<div class="row title-head_1">

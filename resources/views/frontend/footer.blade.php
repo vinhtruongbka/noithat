@@ -38,7 +38,7 @@
 					@endforeach
 				</ul>
 			</div>
-			<div class="col-md-3">
+			<div class="col-md-3 hidden-xs">
 				<h5>ĐẶT HÀNG 24H</h5>
 				<ul class="list-menu">
 					<li class="li_menu li_menu_xxx">
