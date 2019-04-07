@@ -23,8 +23,7 @@
 						</ul>
 						<ul class="topbar_left_2">
 							<li>
-								<i class="fa fa-facebook-square" aria-hidden="true"></i>
-								<a href="{{ getinfo()->facebook }}" title="" class="facebook">https://www.facebook.com</a>
+								<a href="{{ getinfo()->facebook }}" title="Facebook" class=""><img src="public/frontend/images/face.png" class="social-icons" alt="Facebook" title="Facebook"></a>
 							</li>
 						</ul>
 					</div>

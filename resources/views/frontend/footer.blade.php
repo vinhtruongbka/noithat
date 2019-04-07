@@ -60,6 +60,9 @@
 			</div>
 			<div class="col-md-6">
 				<ul class="nav nav-tabs my-nav-tabs my-nav-tabs-2" style="margin-top: 0px">
+					<li>
+						<a href="{{ getinfo()->facebook }}" title="Facebook" class=""><img src="public/frontend/images/face.png" class="social-icons" alt="Facebook" title="Facebook"></a>
+					</li>
 					<li><a href="">Trang chủ</a></li>
 					<li><a href="">Giới thiệu</a></li>
 					<li><a href="">Liên hệ</a></li>
