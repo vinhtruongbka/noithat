@@ -41,6 +41,10 @@
 				</div>
 			</div>
 			@endforeach
+			
+		</div>
+		<div class="row text-center"> 
+			<a href="{{ route('Fronted.getSell') }}"><button type="button" class="btn btn-danger img-btn">Xem thêm sản phẩm</button></a>
 		</div>
 </div>
 </section>
@@ -85,7 +89,10 @@
 				</div>
 			</div>
 			@endforeach
- 			</div>
+			 </div>
+			 <div class="row text-center"> 
+				<a href="{{ route('Fronted.getCategory',$product->slug."-".$product->id) }}"><button type="button" class="btn btn-danger img-btn">Xem thêm sản phẩm</button></a>
+			</div>
 		</div>
 </section>
 	@endif
