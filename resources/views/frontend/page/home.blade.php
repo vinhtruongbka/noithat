@@ -1,7 +1,7 @@
 @extends('frontend.masster')
 @section('contentFront')
 	@include('frontend.slide')
-@include('frontend.service')
+{{-- @include('frontend.service') --}}
 <section class="sanpham">
 	<div class="container">
 		<div class="row">

@@ -96,8 +96,8 @@
 
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse navbar-ex1-collapse my-navbar-collapse">
-					<ul class="nav navbar-nav my_nav">
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="nav navbar-nav">
 						@foreach (getCategory() as $categorie)
 						<li class="dropdown">
 							<a href="{{ route('Fronted.getCategory',$categorie->slug."-".$categorie->id) }}" 
@@ -110,7 +110,7 @@
 								@endif
 							</a>
 							@if ($categorie->sub_category->count())
-								<ul class="dropdown-menu my-dropdown-menu">
+								<ul class="dropdown-menu">
 									@foreach ($categorie->sub_category as $subCategory)
 										<li><a href="{{ route('Fronted.getCategory',$subCategory->slug."-".$subCategory->id) }}">{{$subCategory->name}}</a></li>
 									@endforeach
