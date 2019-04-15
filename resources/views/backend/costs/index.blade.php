@@ -54,7 +54,7 @@
                     {{number_format($post->price_ouput)}}₫
                   </td>
                   <td>
-                    {{ number_format($post->costs+$post->OtherCosts) }}
+                    {{ number_format($post->costs+$post->OtherCosts) }}₫
                   </td>
                   <td align="center" class="table-action">
                     <a href="{{route('backend.product-edit',['id'=>$post->id])}}" title="Chỉnh sửa bài viết" class="label label-default">
