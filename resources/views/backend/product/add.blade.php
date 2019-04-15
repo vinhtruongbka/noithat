@@ -66,8 +66,8 @@
               <div class="form-group">
                 <label class="control-label">Trạng thái</label>
                 <select name="status" id="status" class="form-control" required="required">
-                  <option value="0">Không kích hoạt</option>
-                  <option value="1" selected>Kích hoạt</option>
+                  <option value="0">Hết hàng</option>
+                  <option value="1" selected>Còn hàng</option>
                 </select>
               </div>
                <div class="form-group">
@@ -93,14 +93,22 @@
               </div>
               <div class="form-group">
                 <label class="control-label">Giá gốc</label>
-                <input type="text" name="price_ouput" class="form-control" placeholder="Giá chính...">
+                <input type="number" name="price_ouput" class="form-control" placeholder="Giá chính...">
               </div>
               <div class="form-group">
                 <label class="control-label">Giá khuyến mãi</label>
-                <input type="text" name="price_input" class="form-control" placeholder="Giá khuyến mãi...">
+                <input type="number" name="price_input" class="form-control" placeholder="Giá khuyến mãi...">
                 @if($errors->has('price_input'))
                   <div class="help-block">{{ $errors->first('price_input') }}</div>
                   @endif
+              </div>
+              <div class="form-group">
+                <label class="control-label">Chi phí sản xuất</label>
+                <input type="number" name="Costs" class="form-control" placeholder="Chi phí sản xuất...">
+              </div>
+              <div class="form-group">
+                <label class="control-label">Chi phí khác</label>
+                <input type="number" name="OtherCosts" class="form-control" placeholder="Chi phí khác...">
               </div>
               <div class="form-group">
                 <label class="control-label">Hình ảnh đại diện</label>

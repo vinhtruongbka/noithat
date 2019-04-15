@@ -53,6 +53,15 @@
 			'uses' => 'backend\ProductController@producthotShow',
 			'as' => 'backend.producthotShow'
 		]);
+		Route::get('/costs',[
+			'uses' => 'backend\ProductController@getCosts',
+			'as' => 'backend.getCosts'
+		]);
+
+		Route::get('/costs-detail',[
+			'uses' => 'backend\ProductController@getCostsdetail',
+			'as' => 'backend.getCostsdetail'
+		]);
 	})
 
  ?>

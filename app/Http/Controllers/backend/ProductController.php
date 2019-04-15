@@ -175,4 +175,21 @@ class ProductController extends Controller
         }
     }
 
+    public function getCosts(Request $req)
+    {
+        $product = Product::orderBy('id','DESC')->paginate(10);
+    	return view('backend.costs.index',compact('product'));
+    }
+
+    public function getCostsdetail(Request $req)
+    {
+        //$product = Product::orderBy('id','DESC')->paginate(10);
+        $product = DB::table('product')
+            ->join('order_detail', 'product.id', '=', 'order_detail.product_id')
+            ->select('product.*', Db::raw('SUM(order_detail.quantity) as  total_order'))
+            ->groupBy('order_detail.product_id')
+            ->orderBy('id','DESC')->paginate(10);
+    	return view('backend.costs.costsDetail',compact('product'));
+    }
+
 }

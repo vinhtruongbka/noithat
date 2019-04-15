@@ -66,8 +66,8 @@
               <div class="form-group">
                 <label class="control-label">Trạng thái</label>
                 <select name="status" id="status" class="form-control" required="required">
-                  <option value="0" @if($model->status == 0) selected @endif>Không kích hoạt</option>
-                  <option value="1" @if($model->status == 1) selected @endif>Kích hoạt</option>
+                  <option value="0" @if($model->status == 0) selected @endif>Hết hàng</option>
+                  <option value="1" @if($model->status == 1) selected @endif>Còn hàng</option>
                 </select>
               </div>
               <div class="form-group">
@@ -93,17 +93,25 @@
               </div>
               <div class="form-group">
                   <label class="control-label">Giá chính</label>
-                  <input type="text" name="price_ouput" class="form-control" placeholder="Giá nhập..." value="{{$model->price_ouput}}">
+                  <input type="number" name="price_ouput" class="form-control" placeholder="Giá nhập..." value="{{$model->price_ouput}}">
                   @if($errors->has('price_ouput'))
                     <div class="help-block">{{ $errors->first('price_ouput') }}</div>
                   @endif
                 </div>
                 <div class="form-group">
                   <label class="control-label">Giá khuyến mãi</label>
-                  <input type="text" name="price_input" class="form-control" placeholder="Giá bán..." value="{{$model->price_input}}">
+                  <input type="number" name="price_input" class="form-control" placeholder="Giá bán..." value="{{$model->price_input}}">
                   @if($errors->has('price_input'))
                   <div class="help-block">{{ $errors->first('price_input') }}</div>
                 @endif
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Chi phí sản xuất</label>
+                  <input type="number" name="costs" class="form-control" value="{{$model->costs}}">
+                </div>
+                <div class="form-group">
+                  <label class="control-label">Chi phí khác</label>
+                <input type="number" name="OtherCosts" class="form-control" value="{{$model->OtherCosts}}">
                 </div>
               <div class="form-group">
                  <label class="control-label">Hình ảnh</label>

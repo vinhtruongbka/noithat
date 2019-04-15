@@ -94,6 +94,19 @@
           </li>
         </ul>
       </li>
+      <li class="">
+        <a href="">
+          <i class="fa fa-line-chart"></i> <span>Báo cáo</span>
+        </a>
+        <!-- Kiểm tra và duyệt menu leval 2 -->
+        <ul class="treeview-menu">
+          <li class=""><a href="{{ route('backend.getCosts') }}"><i class="fa fa-external-link-square"></i> <span>Chi phí</span></a>
+            <li class=""><a href="{{ route('backend.getCostsdetail') }}"><i class="fa fa-external-link-square"></i> <span>Sản phẩm đã bán</span></a>
+            <!-- Kiểm tra và duyệt menu leval 3 -->
+          </li>
+        </ul>
+      </li>
+      
     </ul>
     <!-- end isset backMenus -->
     <!--endif auth check -->
